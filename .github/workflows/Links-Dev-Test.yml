@@ -1,0 +1,29 @@
+name: Links-Dev-Test
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches: [ "master" ]
+    
+ jobs:
+  php:
+    name: PHP ${{ matrix.php }} Test
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.2', '7.3', '7.4', '8.0', '8.1', '8.2']
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Syntax Check
+        run: |
+          find . -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l -n | (! grep -v "No syntax errors detected" )
