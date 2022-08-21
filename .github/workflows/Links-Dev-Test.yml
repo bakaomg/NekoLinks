@@ -7,8 +7,8 @@ on:
       - dev
   pull_request:
     branches: [ "master" ]
-    
- jobs:
+
+jobs:
   php:
     name: PHP ${{ matrix.php }} Test
     runs-on: ubuntu-latest
