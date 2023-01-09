@@ -1,7 +1,7 @@
 <!--
  * @Author: ohmyga
  * @Date: 2023-01-10 06:22:58
- * @LastEditTime: 2023-01-10 07:44:43
+ * @LastEditTime: 2023-01-10 07:47:51
 -->
 <p align="center">
    <img src="./assets/banner.png" />
@@ -155,6 +155,7 @@ print_r(\TypechoPlugin\NekoLinks\Plugin::rawLinksArray(true, true, true));
 </details>
 
 ## 其他
+- 本插件仅支持 **Typecho 1.2.0+** 和 **PHP8.0+** (不支持 PHP7.x)
 - 本插件开发时部分参考了 [Links](https://www.imhan.com/archives/typecho-links/) 插件
 - 本插件的管理页面使用 `Vite`+`Vue3`+`Element Plus` 开发，因为打包后还有许多需要修改的地方，所以暂时不一并开源
 
