@@ -4,12 +4,11 @@
  * 
  * @Author: ohmyga
  * @Date: 2022-08-21 23:00:20
- * @LastEditTime: 2023-01-10 06:07:34
+ * @LastEditTime: 2023-01-10 06:15:00
  */
 use Utils\Helper;
 use Widget\User;
 use Widget\Menu;
-use ReflectionClass;
 use Typecho\Widget\Request as widgetRequest;
 use Typecho\Widget\Response as widgetResponse;
 use TypechoPlugin\NekoLinks\core\Libs;
@@ -28,7 +27,7 @@ function canMigrate(): string
 
 function getMenu(): array
 {
-    $class = new ReflectionClass(Menu::class);
+    $class = new \ReflectionClass(Menu::class);
     $property = $class->getProperty("menu");
     $property->setAccessible(true);
     $menu = new Menu(
