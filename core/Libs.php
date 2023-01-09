@@ -4,7 +4,7 @@
  * 
  * @Author: ohmyga
  * @Date: 2022-08-23 15:24:15
- * @LastEditTime: 2023-01-10 05:46:51
+ * @LastEditTime: 2023-01-10 07:58:35
  */
 
 namespace TypechoPlugin\NekoLinks\core;
@@ -117,8 +117,7 @@ class Libs
      */
     public function checkLogin(?string $permission = null): bool
     {
-        return true;
-        //return $this->user->hasLogin() && $this->user->pass($permission ?? 'administrator', true);
+        return $this->user->hasLogin() && $this->user->pass($permission ?? 'administrator', true);
     }
 
     /**
