@@ -4,7 +4,7 @@
  * 
  * @Author: ohmyga
  * @Date: 2022-08-23 14:16:15
- * @LastEditTime: 2022-08-23 16:23:56
+ * @LastEditTime: 2023-01-10 05:46:40
  */
 
 namespace TypechoPlugin\NekoLinks\core;
@@ -14,6 +14,11 @@ use Typecho\Db\Exception as DbException;
 use Typecho\Plugin\Exception as PluginException;
 use Typecho\Plugin as TypechoPlugin;
 use Utils\Helper;
+
+use function explode;
+use function strtolower;
+use function trim, str_replace;
+use function file_exists, file_get_contents;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -87,8 +92,10 @@ class Neko
     {
         if ($add) {
             Helper::addAction('nekolinks', '\TypechoPlugin\NekoLinks\Action');
+            Helper::addAction('nekolinks-api', '\TypechoPlugin\NekoLinks\Action');
         } else {
             Helper::removeAction('nekolinks');
+            Helper::removeAction('nekolinks-api');
         }
     }
 }
