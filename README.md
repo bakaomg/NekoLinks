@@ -1,7 +1,7 @@
 <!--
  * @Author: ohmyga
  * @Date: 2023-01-10 06:22:58
- * @LastEditTime: 2023-01-10 07:47:51
+ * @LastEditTime: 2023-01-10 07:56:54
 -->
 <p align="center">
    <img src="./assets/banner.png" />
@@ -50,6 +50,19 @@
         },
         ...
     ],
+    "count": 114514,
+    "sorts": [
+        ...
+        {
+            "id": "default",
+            "name": "默认分类"
+        },
+        {
+            "id": "baka",
+            "name": "Baka!!"
+        },
+        ...
+    ]
 }
 ```
 
